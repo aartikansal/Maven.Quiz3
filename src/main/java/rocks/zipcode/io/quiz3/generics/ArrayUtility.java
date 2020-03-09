@@ -36,9 +36,27 @@ public class ArrayUtility<SomeType> {
         return null;
     }
         public SomeType findEvenOccurringValue () {
+            HashMap<SomeType, Integer> occurrence = new HashMap<>();
+            for (SomeType currentKey : this.array) {
+                if (occurrence.containsKey(currentKey)) {
+                    int currentValue = occurrence.get(currentKey);
+                    occurrence.replace(currentKey, currentValue + 1);
+                } else {
+                    occurrence.put(currentKey, 1);
+                }
+            }
+            Iterator<Map.Entry<SomeType, Integer>> iter = occurrence.entrySet().iterator();
+            while (iter.hasNext()) {
+                Map.Entry<SomeType, Integer>
+                        currentEntry = iter.next();
+                if (currentEntry.getValue() % 2 == 0) {
+
+                    return currentEntry.getKey();
+                }
+            }
+            return null;
 
 
-return null;
         }
         public Integer getNumberOfOccurrences (SomeType valueToEvaluate){
             int count =0;
