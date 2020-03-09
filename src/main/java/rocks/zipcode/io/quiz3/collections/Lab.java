@@ -31,5 +31,3 @@ public class Lab {
         return this.labStatus;
     }
 }
- // public enum LabStatus {
-     // COMPLETED, INCOMPLETE, PENDING;
