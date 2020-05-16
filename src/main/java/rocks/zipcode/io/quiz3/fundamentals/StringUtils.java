@@ -22,10 +22,10 @@ public class StringUtils {
     }
 
     public static String[] getAllSubStrings(String string) {
-        HashSet<String> set =new HashSet<>();
-        for(int i =0; i < string.length(); i++){
-            for(int j= i+1; j <= string.length();j++){
-                set.add(string.substring(i , j));
+        HashSet<String> set = new HashSet<>();
+        for (int i = 0; i < string.length(); i++) {
+            for (int j = i + 1; j <= string.length(); j++) {
+                set.add(string.substring(i, j));
             }
         }
         return new ArrayList<>(set).toArray(new String[0]);
@@ -33,15 +33,6 @@ public class StringUtils {
 
 
     public static Integer getNumberOfSubStrings(String input) {
-        int count = 0;
-        String newString = "";
-        String[] newArray = input.split("");
-        for (int i = 0; i < input.length(); i++) {
-            for (int j = 0; j < input.length(); j++) {
-                newString += input.substring(i, j + 1);
-                count += 1;
-            }
-        }
-        return count;
+        return getAllSubStrings(input).length;
     }
-     }
+}
