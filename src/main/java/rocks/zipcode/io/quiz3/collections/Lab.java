@@ -9,7 +9,9 @@ public class Lab {
 
 
     public Lab() {
-        this(null);
+
+        this("");
+        this.labStatus = LabStatus.INCOMPLETE;
     }
 
     public Lab(String labName) {
@@ -19,7 +21,7 @@ public class Lab {
     }
 
     public String getName() {
-        return this.labName;
+        return labName;
     }
 
     public void setStatus(LabStatus labStatus) {
