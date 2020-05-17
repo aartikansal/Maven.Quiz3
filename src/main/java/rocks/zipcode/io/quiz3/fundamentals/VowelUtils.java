@@ -19,7 +19,20 @@ public class VowelUtils {
     }
 
     public static Integer getIndexOfFirstVowel(String word) {
-        return null;
+       char[] vowels ={'a', 'e', 'i','o','u'} ;
+       int index =0;
+       for(int i=0; i<word.length(); i++){
+           for(int j=0; j< vowels.length; j++){
+               if(word.charAt(i) == vowels[j]){
+                   index = i;
+                   return index;
+               }
+           }
+       }
+
+
+
+        return -1;
     }
 
 
