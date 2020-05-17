@@ -37,7 +37,16 @@ public class VowelUtils {
 
 
     public static Boolean startsWithVowel(String word) {
-        return null;
+
+        char[] vowels = {'A', 'E', 'I', 'O', 'U'};
+        for (int i = 0; i < 1; i++) {
+            for (int j = 0; j < vowels.length; j++) {
+                if (word.charAt(i) == vowels[j]) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public static Boolean isVowel(Character character) {
