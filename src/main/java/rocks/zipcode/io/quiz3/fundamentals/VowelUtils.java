@@ -50,6 +50,14 @@ public class VowelUtils {
     }
 
     public static Boolean isVowel(Character character) {
-        return null;
+        char[] vowels = {'A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u'};
+        boolean solution = false;
+        for (int i = 0; i < vowels.length; i++) {
+            if(character == vowels[i]){
+               solution = true;
+            }
+        }
+
+        return solution;
     }
 }
