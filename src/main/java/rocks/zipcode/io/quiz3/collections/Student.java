@@ -28,6 +28,23 @@ public class Student {
         return null;
      }
 
+    public void forkLab(Lab lab) {
+        for (Lab l : labs){
+            if(l.equals(lab)){
+                l.setStatus(LabStatus.PENDING);
+                return;
+            }
+        }
+        lab.setStatus(LabStatus.PENDING);
+        this.labs.add(lab);
+    }
+
+    public LabStatus getLabStatus(String labName) {
+        return null;
+    }
+
+    public void setLabStatus(String labName, LabStatus completed) {
+    }
 }
     /*private String labName;
     private LabStatus labStatus;
