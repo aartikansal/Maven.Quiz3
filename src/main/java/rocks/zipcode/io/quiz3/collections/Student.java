@@ -1,14 +1,39 @@
 package rocks.zipcode.io.quiz3.collections;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * @author leon on 10/12/2018.
  */
 public class Student {
-    private String labName;
-    private LabStatus labStatus;
+    private List<Lab> labs;
+    public Student(){
+        this(null);
+    }
+    public Student(List<Lab> labs){
+        if(labs != null) {
+            this.labs = labs;
+        } else{
+             this.labs = new ArrayList<>();
+            }
+        }
 
+     public Lab getLab(String labName){
+        for (Lab l : labs){
+            if(l.getName().equals(labName)){
+                return l;
+            }
+        }
+        return null;
+     }
+
+}
+    /*private String labName;
+    private LabStatus labStatus;
+    public Lab(){
+        this(null);
+    }
     public Student() {
         this(null);
     }
@@ -30,5 +55,5 @@ public class Student {
 
     public LabStatus getLabStatus(String labName) {
         return LabStatus.COMPLETED;
-    }
-}
+    }*/
+
